@@ -2,30 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Messaging</title>
-    <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Message Your Doctor</h1>
-        
-        <div class="message-section">
-            <textarea id="message" placeholder="Type your message"></textarea>
-            <button onclick="sendMessage()">Send Message</button>
-        </div>
-        
-        <div class="upload-section">
-            <h2>Upload Medical Document</h2>
-            <input type="file" id="fileInput">
-            <button onclick="uploadDocument()">Upload Document</button>
-        </div>
+    <h1>Welcome to Medical Messaging</h1>
 
-        <div id="messages-section">
-            <h2>Your Messages</h2>
-            <div id="messages"></div>
-        </div>
+    <div id="user-type">
+        <button onclick="setUserType('doctor')">Login as Doctor</button>
+        <button onclick="setUserType('patient')">Login as Patient</button>
+    </div>
+
+    <div id="doctor-options" style="display:none;">
+        <h2>Doctor Dashboard</h2>
+        <div id="patients-list"></div>
+        <textarea id="doctor-message" placeholder="Type message to patient"></textarea>
+        <button onclick="sendDoctorMessage()">Send Message</button>
+    </div>
+
+    <div id="patient-options" style="display:none;">
+        <h2>Patient Dashboard</h2>
+        <div id="doctor-list"></div>
+        <input type="file" id="fileInput">
+        <button onclick="uploadDocument()">Upload Document</button>
+        <textarea id="patient-message" placeholder="Type message to doctor"></textarea>
+        <button onclick="sendPatientMessage()">Send Message</button>
     </div>
 </body>
 </html>
