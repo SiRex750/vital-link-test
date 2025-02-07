@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Messaging</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Medical Messaging</h1>
+    <div class="login">
+        <button onclick="showDoctorLogin()">Login as Doctor</button>
+        <button onclick="showPatientLogin()">Login as Patient</button>
+    </div>
+
+    <div class="login-form" id="loginForm">
+        <input type="text" id="userId" placeholder="Enter your ID">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div class="dashboard" id="dashboard">
+        <h2>Welcome <span id="userRole"></span></h2>
+        <div id="messages"></div>
+        <div id="doctors-list" style="display:none;">
+            <h3>Your Doctors</h3>
+            <ul id="doctorList"></ul>
+        </div>
+        <div id="patients-list" style="display:none;">
+            <h3>Your Patients</h3>
+            <ul id="patientList"></ul>
+        </div>
+    </div>
+
+    <div class="upload">
+        <h2>Upload Medical Document</h2>
+        <input type="file" id="fileInput">
+        <button onclick="uploadDocument()">Upload</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
