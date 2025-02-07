@@ -2,20 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Messaging</title>
-    <script defer src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <h1>Message Your Doctor</h1>
-    <textarea id="message" placeholder="Type your message"></textarea>
-    <button onclick="sendMessage()">Send</button>
+    <div class="container">
+        <h1>Message Your Doctor</h1>
+        
+        <div class="message-section">
+            <textarea id="message" placeholder="Type your message"></textarea>
+            <button onclick="sendMessage()">Send Message</button>
+        </div>
+        
+        <div class="upload-section">
+            <h2>Upload Medical Document</h2>
+            <input type="file" id="fileInput">
+            <button onclick="uploadDocument()">Upload Document</button>
+        </div>
 
-    <h2>Upload Medical Document</h2>
-    <input type="file" id="fileInput">
-    <button onclick="uploadDocument()">Upload</button>
-
-    <h2>Messages</h2>
-    <div id="messages"></div>
+        <div id="messages-section">
+            <h2>Your Messages</h2>
+            <div id="messages"></div>
+        </div>
+    </div>
 </body>
 </html>
