@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medical Messaging</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Message Your Doctor</h1>
+    <textarea id="message" placeholder="Type your message"></textarea>
+    <button onclick="sendMessage()">Send</button>
+
+    <h2>Upload Medical Document</h2>
+    <input type="file" id="fileInput">
+    <button onclick="uploadDocument()">Upload</button>
+
+    <h2>Messages</h2>
+    <div id="messages"></div>
+</body>
+</html>
